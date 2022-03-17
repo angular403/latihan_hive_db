@@ -1,5 +1,9 @@
 import 'package:get/get.dart';
 
+import 'package:latihan_hive_db/app/modules/add_note/bindings/add_note_binding.dart';
+import 'package:latihan_hive_db/app/modules/add_note/views/add_note_view.dart';
+import 'package:latihan_hive_db/app/modules/edit_note/bindings/edit_note_binding.dart';
+import 'package:latihan_hive_db/app/modules/edit_note/views/edit_note_view.dart';
 import 'package:latihan_hive_db/app/modules/home/bindings/home_binding.dart';
 import 'package:latihan_hive_db/app/modules/home/views/home_view.dart';
 
@@ -15,6 +19,16 @@ class AppPages {
       name: _Paths.HOME,
       page: () => HomeView(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_NOTE,
+      page: () => AddNoteView(),
+      binding: AddNoteBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDIT_NOTE,
+      page: () => EditNoteView(),
+      binding: EditNoteBinding(),
     ),
   ];
 }
