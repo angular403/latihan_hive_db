@@ -27,7 +27,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.EDIT_NOTE,
-      page: () => EditNoteView(),
+      page: () => editNoteView(),
       binding: EditNoteBinding(),
     ),
   ];
