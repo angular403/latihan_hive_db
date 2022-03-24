@@ -16,6 +16,7 @@ class AddNoteView extends GetView<AddNoteController> {
         padding: EdgeInsets.all(15),
         children: [
           TextField(
+            autocorrect: false,
             controller: controller.titleC,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
@@ -27,6 +28,7 @@ class AddNoteView extends GetView<AddNoteController> {
           ),
           SizedBox(height: 15),
           TextField(
+            autocorrect: false,
             controller: controller.descC,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
@@ -38,8 +40,11 @@ class AddNoteView extends GetView<AddNoteController> {
           ),
           SizedBox(height: 20),
           Obx(() => ElevatedButton.icon(
-                onPressed: () {
-                  if (controller.isLoading.isFalse) {}
+                onPressed: () async {
+                  if (controller.isLoading.isFalse) {
+                    await controller.addNote();
+                    Get.back();
+                  }
                 },
                 icon: Icon(Icons.save),
                 label: Text(

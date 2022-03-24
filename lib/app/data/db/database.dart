@@ -13,3 +13,7 @@ class Notes extends HiveObject{
   @HiveField(2)
   String? desc;
 }
+
+class NoteManager {
+  static Box<Notes> getAllNotes() => Hive.box<Notes>("notes");
+}

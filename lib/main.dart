@@ -10,8 +10,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
 
-    Hive.registerAdapter(NotesAdapter());
+  Hive.registerAdapter(NotesAdapter());
 
+  await Hive.openBox<Notes>("notes");
   runApp(
     GetMaterialApp(
       title: "Application",
